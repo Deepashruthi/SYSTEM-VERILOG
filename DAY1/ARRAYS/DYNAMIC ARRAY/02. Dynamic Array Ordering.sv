@@ -11,5 +11,8 @@ module dynamic_array2;
     $display(array);
     array.shuffle();
     $display(array);
+    array.delete();
+    $display(array);
+    $display("size = %0d",array.size());
   end
 endmodule

@@ -13,8 +13,8 @@ module union_packed;
     x = d1.b;//read to b
     $display("x=%h",x);
     
-    d1.b = 32'h0000_ffff;//write to a
-    x = d1.c;//read to b
+    d1.b = 32'h0000_ffff;//write to b
+    x = d1.c;//read to c
     $display("x=%h",x);
   end
 endmodule

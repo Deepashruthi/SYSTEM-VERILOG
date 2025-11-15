@@ -2,7 +2,7 @@
 module task_eg;
   int a,b;
   bit[7:0] out;
-  function result (input int a,b, output bit[7:0] out);
+  task result (input int a,b, output bit[7:0] out);
     if(a==b) begin
       out = a+b;
       return ;// cannot return any value in task // premature return
@@ -18,7 +18,7 @@ module task_eg;
       $display("A-B");
       return;
     end
-  endfunction
+  endtask
   
   initial begin
     a=10; b=10;

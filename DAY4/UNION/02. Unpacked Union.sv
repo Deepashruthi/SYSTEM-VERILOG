@@ -4,17 +4,16 @@ module union_unpacked;
   typedef union {
     int a;
     logic[15:0] b; // all members are in different size
-    bit [3:0] c;
   } data;
   data d1;
   
   initial begin
-    d1.a = 32'hffff_ffff;//write to a
-    x = d1.b;//read to b
-    $display("x=%h",x);
+    d1.a = 32'h0f0f0f0f0f;//write to a
+    x = d1.b;//read to b  // only read from b
+    $display("x=%h",x); // Exp Output: 00000f0f
     
     d1.b = 16'h0001;//write to b
-    x = d1.c;//read to c//Expected Output: 00000001 (ffffffff is totally cleared)
+    x = d1.a;//read to a//Expected Output: 00000001 (ffffffff is totally cleared)
     $display("x=%h",x);
   end
 endmodule

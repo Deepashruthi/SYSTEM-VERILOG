@@ -3,7 +3,7 @@ module union_packed;
   bit[31:0] x;
   typedef union packed{
     int a;
-    logic[31:0] b;
+    logic[31:0] b;        // all members are in same bit width
     bit [31:0] c;
   } data;
   data d1;

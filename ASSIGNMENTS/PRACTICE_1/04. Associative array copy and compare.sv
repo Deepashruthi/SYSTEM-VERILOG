@@ -12,7 +12,7 @@ module assoc;
   
   initial begin
     ass_arr1["districts"] = 32;
-    ass_arr2["states"] = 28;
+    ass_arr1["states"] = 28;
     ass_arr2 = ass_arr1;
     compare();
   end

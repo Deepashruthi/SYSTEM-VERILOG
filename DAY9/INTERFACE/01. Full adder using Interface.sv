@@ -1,3 +1,15 @@
+//Design code 
+module half_adder(input a,b, output s_out,c_out);
+  assign s_out = a^b;
+  assign c_out = a&b;
+endmodule
+module full_adder(fa_if inf);
+    wire s0,c0,c1;
+    half_adder HA1(inf.a , inf.b,s0,c0);
+    half_adder HA2(inf.c , s0, inf.s_out, c1);
+    assign inf.c_out = c0|c1;
+  endmodule
+
 //Interface
 interface fa_if;
   logic a,b,c;

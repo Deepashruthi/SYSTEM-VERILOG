@@ -5,7 +5,7 @@ module sum_N_numbers;
   function int sum_N(int ip[]);
     int sum = 0;
     foreach(ip[i])
-      sum sum + ip[i];
+      sum = sum + ip[i];
     return sum;
   endfunction
   initial begin

@@ -9,7 +9,7 @@ endclass
 class child_class extends parent_class;
   bit [31:0] data;
   function display();
-    super.display();
+    super.display();//access parentclass method
     $display("Data = %0d",data);
   endfunction
 endclass
@@ -22,3 +22,7 @@ module super_key;
     c.display();
   end
 endmodule
+
+//OUTPUT
+Addr = 10
+Data = 20

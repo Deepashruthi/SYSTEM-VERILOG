@@ -22,3 +22,6 @@ module inheritence;
     c.display();
   end
 endmodule
+
+//OUTPUT
+Data = 20

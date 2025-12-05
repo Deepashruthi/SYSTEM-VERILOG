@@ -14,7 +14,7 @@ class child_class extends parent_class;
 
 endclass
 
-module inheritence;
+module super_key;
   initial begin
     child_class c=new();
     c.addr = 10;

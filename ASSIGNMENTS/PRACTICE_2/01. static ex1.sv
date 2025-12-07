@@ -18,3 +18,11 @@ module tb;
     b2.get();
   end
 endmodule
+
+//OUTPUT
+1
+1
+2
+2
+3
+3

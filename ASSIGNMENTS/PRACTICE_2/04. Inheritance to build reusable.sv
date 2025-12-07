@@ -18,3 +18,7 @@ module inherit;
     drv.drive(8'h65);
   end
 endmodule
+
+//OUTPUT
+Custom Driving data = 65
+Driving data = 65

@@ -27,3 +27,9 @@ module example;
     wc.final_match();
   end
 endmodule
+
+//OUTPUT
+Premium Ticket Rate = 1000
+Golden Ticket Rate = 500
+Premium Ticket Rate = 1000
+Golden Ticket Rate = 500

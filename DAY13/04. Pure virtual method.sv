@@ -25,3 +25,7 @@ module pure_vir_fun();
     b1.sum();
   end 
 endmodule
+
+// OUTPUT
+1.Value of a = 10, b = 10, c = 0
+2.Value of a = 10, b = 35, c = 45

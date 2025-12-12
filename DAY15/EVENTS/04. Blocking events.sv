@@ -8,12 +8,13 @@ module blocking_event;
   initial begin
     $display($time,"\t waiting for the event using wait");
     wait(BJT.triggered);
-    $display($time,"\t event BJT is triggered using wait");
+    $display($time,"\t event BJT is triggered using wait"); //  we can use wait(BJT.triggered) to detect the triggering
   end
   initial begin
     $display($time,"\t waiting for the event using @");
     @(BJT.triggered);
-    $display($time,"\t event BJT is triggered using @");
+    $display($time,"\t event BJT is triggered using @"); //AS blocking triggering and @ both work in active region 
+    //so when triggering and waiting of an event takes place at same time at 0ns by using @ operator it block the statement
   end
 endmodule  
 

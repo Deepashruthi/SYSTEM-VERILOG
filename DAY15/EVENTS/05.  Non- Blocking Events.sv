@@ -3,7 +3,8 @@ module non_blocking_event;
   event BJT;
   initial begin 
     $display($time,"\t triggering the event");
-    ->>BJT;
+    ->>BJT; ////using non blocking triggering  so even though when waiting of an event and triggering of an event takes place at same time 
+    //so @ does not blocks the process as non blocking triggering works in non blocking region where @ works in active region so @ unblock the process below 
   end 
   initial begin
     $display($time,"\t waiting for the event using wait");
@@ -12,7 +13,7 @@ module non_blocking_event;
   end
   initial begin
     $display($time,"\t waiting for the event using @");
-    @(BJT.triggered);
+    @(BJT.triggered); 
     $display($time,"\t event BJT is triggered using @");
   end
 endmodule  

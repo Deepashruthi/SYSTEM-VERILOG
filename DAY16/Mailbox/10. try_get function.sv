@@ -1,4 +1,4 @@
-// try_get : Retrieve one message from the mailbox, if mailbox is empty it will block the process.
+// try_get : This is a non-blocking method which tries to get one message from the mailbox, returns 0 if mailbox is empty.
 class A;
   int a;
   mailbox m;

@@ -20,3 +20,19 @@ module top;
     end  
   end  
 endmodule  
+
+
+//OUTPUT
+----- Output for implication constraint -----
+-------------------------------------------
+Iteration 0 -----> value1 = 4 , value2 = 0
+Iteration 1 -----> value1 = 0 , value2 = 10
+Iteration 2 -----> value1 = 4 , value2 = 7
+Iteration 3 -----> value1 = 7 , value2 = 6
+Iteration 4 -----> value1 = 6 , value2 = 5
+Iteration 5 -----> value1 = 6 , value2 = 13
+Iteration 6 -----> value1 = 1 , value2 = 5
+Iteration 7 -----> value1 = 7 , value2 = 12
+Iteration 8 -----> value1 = 5 , value2 = 6
+Iteration 9 -----> value1 = 6 , value2 = 10
+

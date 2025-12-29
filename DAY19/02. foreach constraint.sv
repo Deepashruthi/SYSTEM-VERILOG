@@ -1,24 +1,28 @@
-class value;  
-  rand bit [3:0] s_array1[4];  
-  rand bit [3:0] s_array2[5];  
+// foreach constraint 
+class packet;
+  rand bit[3:0] arr1[4];
+  rand bit[3:0] arr2[];
+  
+  constraint c1 {
+    foreach(arr1[i])
+      arr1[i] == i*2;
+  }
+  constraint c2 { arr2.size == 5;
+                 foreach(arr2[i])
+                   arr2[i] == i*3;
+  }
+endclass
 
-  constraint cons {  
-    foreach (s_array1[i])  
-      s_array1[i] == i;  
+module tb;
+  initial begin
+    packet pkt = new();
+    void'(pkt.randomize());
+    $display("%0p",pkt.arr1);
+    $display("%0p",pkt.arr2);
+  end
+endmodule
 
-    foreach (s_array2[i])  
-      s_array2[i] == i;  
-  }  
-endclass  
 
-// Module declaration  
-module top;  
-  initial begin  
-    value val;  
-    val = new();  
-
-    void'(val.randomize());  
-    $display("\t s_array1 = %0p", val.s_array1);  
-    $display("\t s_array2 = %0p", val.s_array2);  
-  end  
-endmodule                
+//OUTPUT
+'{'h0, 'h2, 'h4, 'h6}
+'{'h0, 'h3, 'h6, 'h9, 'hc}

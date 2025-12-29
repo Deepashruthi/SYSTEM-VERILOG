@@ -1,6 +1,6 @@
 // 2D static array randomization
 class static_array_2D;  
-  rand bit [3:0] a[2][4];  
+  rand byte a[2][4];  
 endclass  
 
 module mod;  
@@ -8,16 +8,16 @@ module mod;
   initial begin  
     pack = new;  
     for (int i = 0; i <= 5; i++) begin  
-      pack.randomize();  
+      void'(pack.randomize());  
       $display("The value of elements of array after randomization = %0p", pack.a); 
   end 
   end
 endmodule
 
 //OUTPUT
-The value of elements of array after randomization = '{'{'h6, 'hf, 'h3, 'h0}, '{'h5, 'h7, 'h7, 'h6}}
-The value of elements of array after randomization = '{'{'he, 'hd, 'h7, 'h1}, '{'h9, 'h9, 'h6, 'h6}}
-The value of elements of array after randomization = '{'{'h4, 'hf, 'h1, 'h2}, '{'h3, 'hf, 'hb, 'h0}}
-The value of elements of array after randomization = '{'{'h3, 'h2, 'hc, 'h7}, '{'hb, 'h5, 'hd, 'hd}}
-The value of elements of array after randomization = '{'{'h3, 'hc, 'hc, 'h5}, '{'h7, 'h2, 'h0, 'h9}}
-The value of elements of array after randomization = '{'{'h1, 'h9, 'ha, 'h8}, '{'h4, 'h1, 'h0, 'hb}}
+The value of elements of array after randomization = '{'{'hf6, 'hcf, 'h63, 'h60}, '{'hf5, 'h7, 'hc7, 'h6}}
+The value of elements of array after randomization = '{'{'h1e, 'h5d, 'h97, 'h81}, '{'hd9, 'h29, 'h6, 'hd6}}
+The value of elements of array after randomization = '{'{'hb4, 'hbf, 'h11, 'h62}, '{'h83, 'hdf, 'heb, 'hf0}}
+The value of elements of array after randomization = '{'{'hc3, 'h92, 'hfc, 'hb7}, '{'h4b, 'h15, 'hcd, 'h1d}}
+The value of elements of array after randomization = '{'{'hf3, 'hec, 'hec, 'h95}, '{'h87, 'hc2, 'h70, 'h99}}
+The value of elements of array after randomization = '{'{'hf1, 'h79, 'haa, 'he8}, '{'hf4, 'h91, 'h80, 'h8b}}

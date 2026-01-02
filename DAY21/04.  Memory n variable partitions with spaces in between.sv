@@ -56,3 +56,24 @@ module tb;
     mem.disp();
   end
 endmodule
+
+
+
+//OUTPUT
+-------------N variable Partition with space in between -----------
+RAM start addr :0
+RAM end addr :2047
+No of partition : 7
+Partition : 1 with size : 64 from 0 to 127
+Space between 1 to 2 is 64 
+Partition : 2 with size : 32 from 128 to 191
+Space between 2 to 3 is 32 
+Partition : 3 with size : 512 from 192 to 767
+Space between 3 to 4 is 64 
+Partition : 4 with size : 512 from 768 to 1295
+Space between 4 to 5 is 16 
+Partition : 5 with size : 64 from 1296 to 1375
+Space between 5 to 6 is 16 
+Partition : 6 with size : 512 from 1376 to 1919
+Space between 6 to 7 is 32 
+Partition : 7 with size : 128 from 1920 to 2047

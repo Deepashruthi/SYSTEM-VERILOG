@@ -1,4 +1,4 @@
-// Generate a 10 bit variable with alternating numbers
+// Generate a 12 bit variable with alternating numbers
 class cons_13;
   rand bit [11:0] value [10];
   constraint c13{ foreach(value[i])

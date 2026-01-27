@@ -6,7 +6,7 @@ module goto_repeat;
 
   covergroup cvgrp;
     c1 : coverpoint a {
-      bins t1 = (1 => 4 [->3] => 5);
+      bins t1 = (1 => 4 [->3] => 5);// 5 should be immmediately after the last occurence of 4 
     }
   endgroup
 

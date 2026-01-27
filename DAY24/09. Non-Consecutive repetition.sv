@@ -6,7 +6,7 @@ module non_cons_repeat;
 
   covergroup cov_grp;
     c1 : coverpoint a {
-      bins tran_1 = (3[=4] => 5);
+      bins tran_1 = (3[=4] => 5); // 5 need not be immmediately after the last occurence of 4 
     }
   endgroup
 

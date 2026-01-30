@@ -27,3 +27,27 @@ value[6] = 179
 value[7] = 181
 value[8] = 183
 value[9] = 185
+
+
+class cons_13;
+  rand bit [11:0] value;
+  constraint c13{ foreach(value[i])
+    value[i] + value[i+1] == 1; }
+endclass
+
+module constraint_13;
+  cons_13 c1 = new();
+  initial begin
+    repeat(5) begin
+    c1.randomize();
+    $display("value = %0b", c1.value);
+    end
+  end
+endmodule
+
+//OUTPUT
+# KERNEL: value = 101010101010
+# KERNEL: value = 101010101010
+# KERNEL: value = 101010101010
+# KERNEL: value = 101010101010
+# KERNEL: value = 101010101010

@@ -1,6 +1,9 @@
+// Code your testbench here
+// or browse Examples
 module tb;
   reg a, b, clk; 
   wire y;
+  logic assert_pass;
   
   and_log uut ( .a(a), .b(b), .y(y) );
   
@@ -33,11 +36,26 @@ module tb;
   
   
   always @(posedge clk) begin 
-    assert (a==0 && b==0) $info("%0t, A=0 and B=0, assertion failed",$time);
-    else assert (a==0 && b==1) $info("%0t, A=0 and B=1, assertion failed",$time);
-    else assert (a==1 && b==0) $info("%0t, A=1 and B=0, assertion failed",$time);
-    else assert (a==1 && b==1) $display("%0t, A=1 and B=1,assertion Success",$time);
-    else $error("%0t fail",$time);
+    assert (a==0 && b==0) begin
+      $info("%0t, A=0 and B=0, assertion failed",$time);
+      assert_pass = 0;
+    end
+    else assert (a==0 && b==1) begin
+      $info("%0t, A=0 and B=1, assertion failed",$time);
+      assert_pass = 0;
+    end
+    else assert (a==1 && b==0) begin
+      $info("%0t, A=1 and B=0, assertion failed",$time);
+      assert_pass = 0;
+    end
+    else assert (a==1 && b==1) begin
+      $display("%0t, A=1 and B=1,assertion Success",$time);
+      assert_pass = 1;
+    end
+    else begin
+      $error("%0t fail",$time);
+      assert_pass = 1'bx;
+    end
   end
   
   initial begin
